@@ -1,0 +1,36 @@
+.wrapper {
+    margin-bottom: 60px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.header p {
+    margin-right: auto;
+    font-size: 2.4rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+}
+
+.select {
+    width: 235px;
+}
+
+@media (max-width: 760px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .select  {
+            width: 100%;
+        }
+    }
+}

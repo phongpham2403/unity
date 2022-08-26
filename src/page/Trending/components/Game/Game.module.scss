@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    width: 329px;
+}
+
+.img {
+    width: 56px;
+    margin-right: 20px;
+    flex: 18%;
+}
+
+.img img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 80%;
+}
+
+.content span{
+    font-size: 1.2rem;
+    color: #808191;
+}
+
+
+.content span:first-child {
+    color: #000;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}

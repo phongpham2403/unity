@@ -1,0 +1,246 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    width: 256px;
+    height: 100vh;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: inset -1px 0 0 0 #e4e4e4;
+    transition: all linear .25s;
+}
+
+.nav {
+    display: none;
+}
+
+.sidebar__header {
+    display: flex;
+    align-items: center;
+    width: 256px;
+    position: absolute;
+    justify-content: space-between;
+    padding: 27px 40px;
+    z-index: 100;
+}
+
+.sidebar_content {
+    margin-top: 96px;
+    max-height: 100%;
+    scrollbar-width: none;
+    overflow-y: auto;
+    padding-bottom: 100px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.banner {
+    padding: 0 20px;
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.img {
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.logo {
+    width: 107px;
+}
+
+.icon {
+    font-size: 2.8rem;
+    cursor: pointer;
+
+    .close_icon {
+        display: none;
+    }
+}
+
+.avatar {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.join {
+    height: 56px;
+    position: absolute;
+    left: 48px;
+    right: 48px;
+    bottom: 80px;
+    z-index: 3;
+}
+
+.banner__intro {
+    position: absolute;
+    left: 48px;
+    right: 48px;
+    bottom: 160px;
+    color: #fff;
+    z-index: 3;
+}
+
+.banner__intro h1 {
+    font-size: 2.3rem;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    min-width: 100%;
+}
+
+.banner__intro p {
+    font-size: 1.2rem;
+}
+
+.close {
+    position: absolute;
+    top: 8px;
+    right: 34px;
+    z-index: 3;
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+
+.icon__close {
+    
+    transition: transform .25s, -webkit-transform .25s;
+    
+    &:hover {
+        transform: rotate(90deg);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    border-radius: 24px;
+    bottom: 56px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    height: 72px;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+    border-top: 1px solid #f2f2f2;
+    border-right: 1px solid #e4e4e4;
+    background-color: #ffffff;
+}
+
+.theme {
+    position: relative;
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: rgba(228, 228, 228, 0.5);
+    border-radius: 16px;
+    transition: all .25s;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 2px;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 4px solid #ffffff;
+        box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
+        background: #3F8CFF;
+        transition: all .25s;
+    }
+}
+
+
+.bars:checked ~ .wrapper {
+    left: -166px;
+}
+
+
+.theme__input:checked ~ .theme::before {
+    left: 40px;
+}
+
+@media (max-width: 739px) {
+    .wrapper {
+        transform: translateX(-100%);
+    }
+
+    .nav {
+        display: block;
+    }
+
+    .wrapper.show {
+        transform: translateX(0);
+        z-index: 20;
+        transition: all linear 0.35s;
+        width: 375px;
+    }
+
+    .sidebar__header {
+        padding-left: 300px;
+    }
+
+    .banner img {
+        width: 100%;
+        object-fit: cover;
+    }
+    .logo {
+        display: none;
+    }
+
+    .icon {
+        .bars_icon {
+            display: none;
+        }
+    }
+
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .wrapper {
+        transform: translateX(-100%);
+    }
+
+    .wrapper.show {
+        transform: translateX(0);
+        z-index: 20;
+        transition: all linear 0.35s;
+    }
+
+    .nav {
+        display: block;
+    }
+    
+    .icon {
+        .bars_icon {
+            display: none;
+        }
+
+        .close_icon {
+            display: block;
+        }
+    }
+
+    .close_icon {
+        display: block;
+    }
+
+    .bars:checked ~ .wrapper {
+        transform: translateX(-100%);
+    }
+}

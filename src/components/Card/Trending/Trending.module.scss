@@ -1,0 +1,134 @@
+.wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    &:hover .action {
+        display: flex;
+    }
+}
+
+.inner {
+    padding: 8px 0px;
+    background-color: #ffffff;
+    border-radius: 24px;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 15px 15px #edf2f7;
+    }
+}
+
+.img {
+    height: 204px;
+    position: relative;
+    padding-left: 8px;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+}
+.number {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 4px;
+    left: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #5F75EE;
+    text-align: center;
+    line-height: 40px;
+}
+
+.info {
+    padding: 24px 95px 0 24px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+}
+
+.status div:first-child {
+    margin-right: 8px;
+}
+
+.name {
+    margin: 10px 0;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 400;
+    width: 320px;
+}
+
+.view {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: -17px;
+    margin-bottom: 10px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+.user_info {
+    font-size: 1.2rem;
+}
+
+.user_name span{
+    margin-right: 8px;
+}
+
+.game {
+    color: #808191;
+}
+
+.action {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    width: 80px;
+    padding: 8px;
+    background: #6C5DD3;
+    border-radius: 24px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+    transition: all linear 0.25s;  
+}
+
+@media (max-width: 760px) {
+    .img {
+        padding: 0;
+    }
+
+    .number {
+        left: 6px;
+    }
+
+    .info {
+        padding-left: 10px;
+    }
+
+    .wrapper {
+        margin-bottom: 50px;
+        &:hover .action {
+            display: none;
+        }
+    }
+}
+
+

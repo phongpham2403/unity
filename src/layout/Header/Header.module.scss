@@ -1,0 +1,263 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 256px;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    height: 96px;
+    padding: 0 64px;
+    background: #ffffff;
+    box-shadow: inset 0 -1px 0 0 #e4e4e4;
+    transition: left .25s;
+    color: #808191;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.browse {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 170px;
+    margin-right: 64px;
+    cursor: pointer;
+
+    &:hover .sub {
+        display: flex;
+    }
+}
+
+.search {
+    width: 100%;
+    cursor: pointer;
+}
+
+.search span {
+    font-size: 2rem;
+    margin-right: 20px;
+    color: #808191;
+    cursor: pointer;
+}
+
+.search input {
+    font-size: 1.4rem;
+    color: #11142D;
+    font-weight: 600;
+}
+
+.notify {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+
+.bell {
+    position: relative;
+    margin: 0 40px;
+}
+
+.qty {
+    position: absolute;
+    top: -6px;
+    right: 20px;
+    padding: 1px 5px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background-image: linear-gradient(0deg, #FF544D 0%, #FF754C 100%);
+}
+
+
+.notify img {
+    width: 48px;
+    height: 48px;
+}
+
+
+.sub {
+    position: absolute;
+    top: 58px;
+    left: -38px;
+    padding: 22px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #3F8CFF;
+    border-radius: 16px;
+    animation: fadeIn linear 0.45s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: 100px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #3F8CFF;
+    }
+
+    &::after {
+        content: '';
+        top: -36px;
+        left: 0;
+        right: 0;
+        height: 60px;
+        position: absolute;
+        background-color: transparent;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.list {
+    width: 200px;
+}
+
+.item {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    span {
+        padding: 0 20px;
+    }
+
+    &:hover {
+        color: #808191;
+    }
+}
+
+.user {
+    position: relative;
+    cursor: pointer;
+
+    &:hover .control {
+        display: block;
+    }
+
+    
+}
+
+.control {
+    position: absolute;
+    top: 75px;
+    right: 0;
+    display: none;
+    width: 256px;
+    padding: 20px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0px 24px 64px rgb(0 0 0 / 50%);
+    animation: fadeIn linear 0.45s;
+
+
+    .control_item {
+        font-size: 1.5rem;
+        color: #828393;
+        font-weight: 500;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &:hover {
+            background: rgba(228, 228, 228, 0.3);
+            color: #5F75EE;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: 0;
+            width: 100%;
+            height: 80px;
+            background-color: transparent;
+        }
+
+        span {
+            padding-left: 20px;
+        }
+    }
+}
+
+.nav {
+    display: none;
+}
+
+@media (max-width: 739px) {
+    .wrapper {
+        left: 0;
+        padding: 0 36px;
+    }
+
+    .nav {
+        display: block;
+    }
+
+    .icon_mobile {
+        margin-right: 140px !important;
+    }
+
+    .browse {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .bell {
+        margin: 0;
+    }
+
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .wrapper {
+        left: 0;
+        padding: 0 36px;
+    }
+
+    .browse {
+        .sub {
+            &::after {
+                left: 40px
+            }
+        }
+    }
+
+    .nav {
+        display: block;
+    }
+
+    .down {
+        margin-left: 26px !important;
+    }
+    .bell {
+        margin: 0 6px;
+    }
+}
+
+
