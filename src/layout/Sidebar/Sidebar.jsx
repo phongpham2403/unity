@@ -20,8 +20,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames/bind'
-import React, { useContext, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { av1, logo, sidebarBanner } from '../../common/images'
 import Button from '../../components/Button'
 import Image from '../../components/Image'
@@ -135,6 +135,12 @@ const Sidebar = () => {
     const handleChangeTheme = () => {
         setTheme(!theme)
     }
+
+    const location = useLocation()
+
+    useEffect(() => {
+        setShow(false)
+    }, [location, setShow])
 
     return (
         <>
